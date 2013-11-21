@@ -25,15 +25,34 @@ makeCandy = function(){
 	document.body.appendChild(candy_span);
 }
 
-checkForLock = function(){
-  // function should check to make sure any match is possible;  
-}
-
-checkForMatch = function(){
-  //function should check the grid to see if there is a match;
-}
-
-
 removeCandy = function(){
 
 }
+
+// this is where the grid will be built and populated
+
+
+
+
+makeRow = function(){
+var row = [];
+	while (row.length < 9){
+		row.push(candy_random());
+	}
+return row;
+}
+
+makeGrid = function(){
+	for (var i = 0; i < 9; i++) {
+		console.log(makeRow());
+	};
+}
+
+// helper with starting spot and a direction, tells you how far you can go 
+
+//i compared to i of back forward and samsies of i for all rows
+
+
+
+
+// var row_one = [candy_random(), candy_random(), candy_random(), candy_random()]
