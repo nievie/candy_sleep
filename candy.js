@@ -42,11 +42,30 @@ var row = [];
 return row;
 }
 
+var row = function(){
+	var r = makeRow();
+	return r;
+}
+
+
+
 makeGrid = function(){
+	var one = new row();
+	var two = new row();
+	var three = new row();
+	var four = new row();
+	var five = new row();
+	var six = new row();
+	var seven = new row();
+	var eight = new row();
+	var nine = new row();
+	var grid = [one, two, three, four, five, six, seven, eight, nine];
+	return grid;
+}
+
 	for (var i = 0; i < 9; i++) {
 		makeRow();
 	};
-}
 
 // helper with starting spot and a direction, tells you how far you can go 
 
