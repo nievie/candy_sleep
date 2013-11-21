@@ -44,13 +44,15 @@ return row;
 
 makeGrid = function(){
 	for (var i = 0; i < 9; i++) {
-		console.log(makeRow());
+		makeRow();
 	};
 }
 
 // helper with starting spot and a direction, tells you how far you can go 
 
 //i compared to i of back forward and samsies of i for all rows
+
+
 
 
 
