@@ -71,10 +71,27 @@ var convert_candy = function(){
 
 } 
 
+var new_candy = function(){
+	for (var i = 0; i < starterGrid.length; i++) {
+		console.log(starterGrid[i][i].color);
+	};
+}
+
 convertGridToHtml = function(){
 	var candy_span = document.createElement('button');
 
-	var new_candy = 'the product of each iteration of the loop through starterGrid'; 
+	var new_candy = function(){
+		for (var i = 0; i < starterGrid.length; i++) {
+			console.log(i + ' : ' + starterGrid[i]);
+			var row_index = starterGrid[i];
+			console.log(i + ' : ' + row_index);
+			for (var i = 0; i < row_index.length; i++) {
+				console.log(i + ' : ' + row_index[i].color);
+			};
+		};
+	}
+
+	'the product of each iteration of the loop through starterGrid'; 
 	candy_span.className = new_candy.color;
 	candy_span.style.color = new_candy.color;
 	document.body.appendChild(candy_span);
