@@ -50,35 +50,35 @@ makeGrid = function(){
 }
 
 var starterGrid = makeGrid();
-
 var land = document.getElementsByClassName('land');
 var candyLand = document.createElement('div');
 
-var convert_candy = function(){
-	var html_candy = {};
-	var html_row_one = starterGrid[0];
-	var html_row_two = starterGrid[1];
-	var html_row_three = starterGrid[2];
-	var html_row_four = starterGrid[3];
-	var html_row_five = starterGrid[4];
-	var html_row_six = starterGrid[5];
-	var html_row_seven = starterGrid[6];
-	var html_row_eight = starterGrid[7];
-	var html_row_nine = starterGrid[8];
-	var html_column_one = html_row_one[0]
-	html_column_one.color
+convertCandyToHtml = function(candy){
+	var candy_span = document.createElement('button');
+	var new_candy = candy;
+	candy_span.className = new_candy.color;
+	candy_span.style.color = new_candy.color;
+	document.body.appendChild(candy_span);
+}
 
-
-} 
-
-var new_candy = function(){
-	for (var i = 0; i < starterGrid.length; i++) {
-		console.log(starterGrid[i][i].color);
+var findCandyInArray = function(grid){
+	var foundCandy = {};
+	for (var i = 0; i < grid.length; i++) {
+		console.log(grid[i]);
+		for ( var j = 0; j < grid[i].length; j++ ) { 
+			var foundCandy = grid[i][j];
+			console.log(foundCandy);
+    }
 	};
+	return foundCandy;
+
 }
 
 convertGridToHtml = function(){
 	var candy_span = document.createElement('button');
+	candy_span.className = new_candy.color;
+	candy_span.style.color = new_candy.color;
+	document.body.appendChild(candy_span);
 
 	var new_candy = function(){
 		for (var i = 0; i < starterGrid.length; i++) {
