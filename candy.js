@@ -49,10 +49,6 @@ makeGrid = function(){
 	return grid;
 }
 
-var starterGrid = makeGrid();
-var land = document.getElementsByClassName('land');
-var candyLand = document.createElement('div');
-
 convertCandyToHtml = function(candy){
 	var candy_span = document.createElement('button');
 	var new_candy = candy;
@@ -61,52 +57,21 @@ convertCandyToHtml = function(candy){
 	document.body.appendChild(candy_span);
 }
 
-var findCandyInArray = function(grid){
+
+convertGridToHtml = function(grid){
 	var foundCandy = {};
 	for (var i = 0; i < grid.length; i++) {
-		console.log(grid[i]);
 		for ( var j = 0; j < grid[i].length; j++ ) { 
 			var foundCandy = grid[i][j];
-			console.log(foundCandy);
-    }
+			convertCandyToHtml(foundCandy);
+    };
 	};
-	return foundCandy;
+};
 
-}
 
-convertGridToHtml = function(){
-	var candy_span = document.createElement('button');
-	candy_span.className = new_candy.color;
-	candy_span.style.color = new_candy.color;
-	document.body.appendChild(candy_span);
-
-	var new_candy = function(){
-		for (var i = 0; i < starterGrid.length; i++) {
-			console.log(i + ' : ' + starterGrid[i]);
-			var row_index = starterGrid[i];
-			console.log(i + ' : ' + row_index);
-			for (var i = 0; i < row_index.length; i++) {
-				console.log(i + ' : ' + row_index[i].color);
-			};
-		};
-	}
-
-	'the product of each iteration of the loop through starterGrid'; 
-	candy_span.className = new_candy.color;
-	candy_span.style.color = new_candy.color;
-	document.body.appendChild(candy_span);
-}
-
-function logArrayElements(element, index, array) {
-    console.log("a[" + index + "] = " + element);
-}
-
-[2, 5, 9].forEach(logArrayElements);
-
-function getIndex(element, index, array) {
-	console.log(index + element);
-}
-
+var starterGrid = makeGrid();
+var land = document.getElementsByClassName('land');
+var candyLand = document.createElement('div');
 
 // helper with starting spot and a direction, tells you how far you can go 
 
