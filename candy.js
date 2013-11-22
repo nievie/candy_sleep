@@ -11,13 +11,17 @@ var blue = new candy("normal", 'blue', 'round');
 var pink = new candy("normal", 'pink', 'round');
 var yellow = new candy("normal", 'yellow', 'round');
 
+// because nievie always needs a randomizer... always. 
+
 candy_random = function(){
 	var candies = [green, blue, pink, yellow];
 	var candie = candies[Math.floor(Math.random()*candies.length)];
 	return candie;
 }
 
-placeRandomCandy = function(){
+// test to make sure I know how to hook up the js to the html
+
+placeRandomCandyInHtml = function(){
 	var candy_span = document.createElement('button');
 	var new_candy = candy_random();
 	candy_span.className = new_candy.color;
@@ -36,6 +40,8 @@ makeRow = function(){
 	return row;
 }
 
+// didn't want to get stuck down a prototyping rabbit hole, but wanted to leave the constructor function here for future implementation
+
 // var row = function(){
 // 	var r = makeRow();
 // 	return r;
@@ -49,6 +55,9 @@ makeGrid = function(){
 	return grid;
 }
 
+var starterGrid = makeGrid();
+
+// revision to the above function placeRandomCandyInHtml(), now takes a candy object as it's argument for improved flexibility
 convertCandyToHtml = function(candy){
 	var candy_span = document.createElement('button');
 	var new_candy = candy;
@@ -57,6 +66,7 @@ convertCandyToHtml = function(candy){
 	document.body.appendChild(candy_span);
 }
 
+//now we can convert the entire starterGrid all at once
 
 convertGridToHtml = function(grid){
 	var foundCandy = {};
@@ -68,18 +78,28 @@ convertGridToHtml = function(grid){
 	};
 };
 
+// made some html variables for testing 
 
-var starterGrid = makeGrid();
 var land = document.getElementsByClassName('land');
 var candyLand = document.createElement('div');
 
-// helper with starting spot and a direction, tells you how far you can go 
+// notes on where to go next:
+// need helper fn with starting spot and a direction, tells you how far you can go 
+// i compared to i of back forward and samsies of i for all rows
 
-//i compared to i of back forward and samsies of i for all rows
+finder = function(array){
+	for (var i = 0; i <array.length; i++) {
+		// do a check function
+		// record output
+	};
+}
 
 
 
+grid_search = function (grid, starting_point){
 
+}
 
+row_search = function (grid,  starting){
 
-// var row_one = [candy_random(), candy_random(), candy_random(), candy_random()]
+}
