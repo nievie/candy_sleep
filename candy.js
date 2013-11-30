@@ -1,15 +1,52 @@
 // this file should contain the code needed to generate the candy
 
-var candy = function(type, color, style){
-	this.type = type;
-	this.color = color;
-	this.style = style;
+var candy = function(){
+	this.candy = true;
+	this.report = function(){
+		console.log(this.color);
+	}
 }
+var Pink = function(type, style){
+	this.color = "pink";
+	this.type = type;
+	this.style = style;
+};
+Pink.protoype = new candy();
+var pink = new Pink('normal', 'round');
 
-var green = new candy("normal", 'green', 'round');
-var blue = new candy("normal", 'blue', 'round');
-var pink = new candy("normal", 'pink', 'round');
-var yellow = new candy("normal", 'yellow', 'round');
+// var Green = function(type, style)
+
+var Green = function(type, style){
+	this.color = "green";
+	this.type = type;
+	this.style = style;
+};
+Green.protoype = new candy();
+var green = new Green('normal',  'round');
+
+var Yellow = function(type, style){
+	this.color = "yellow";
+	this.type = type;
+	this.style = style;
+};
+Yellow.protoype = new candy();
+var yellow = new Yellow('normal',  'round');
+
+// var candy = function(){
+// 	this.candy = true;
+// }
+
+// candy.protoype.idByColor = function(name){
+// 	return this.color;
+// }
+
+var Blue = function(type, style){
+	this.color = "blue";
+	this.type = type;
+	this.style = style;
+};
+Blue.protoype = new candy();
+var blue = new Blue('normal',  'round');
 
 // because nievie always needs a randomizer... always. 
 
@@ -94,8 +131,6 @@ finder = function(array){
 	};
 }
 
-
-
 grid_search = function (grid, starting_point){
 
 }
@@ -103,3 +138,51 @@ grid_search = function (grid, starting_point){
 row_search = function (grid,  starting){
 
 }
+
+//check array again array 
+
+check = function(grid){
+	var grid = grid;
+	for (var i = 0; i <grid.length; i++) {
+	grid[i]
+	};
+	return grid[i];
+}
+
+// take the first array and compare it to the second array to look for a match per index 
+// how do I check to see what is in an index? Array[i] returns what ever is in Array at [i] index. 
+// so I want to compare 
+// for Array x if content of Array x [i] = content of Array y [i] console log pair. ( flag a pair? probably 
+// best to have it return me a matrix.... right? 
+
+// for (var i = 0; i < grid.length; i++) {
+// 	if (grid[0][0] === grid[1])
+// };
+
+a = ['blue','pink','yellow','red','blue','blue','blue','red'];
+match_color='';
+match_start=-1;
+match_end=-1;
+
+var search = function(){
+	for (var i = 0; i < a.length; i++) {
+		if (match_color == "") {
+		match_color = a[i];
+		match_start = i;
+		}
+	else if (a[i]==match_color) {
+		match_end = i;
+		}
+	else if ( match_color!=a[i] ) {
+		match_start = i;
+		match_end = -1;
+		match_color = a[i];
+		} 
+
+	if ( (match_end - match_start) >= 2 && (match_color==a[i])) {
+		console.log("Match found: "+ "Color: " + match_color + " position: " +match_start + " " +match_end);
+		}
+	}
+	
+}
+
