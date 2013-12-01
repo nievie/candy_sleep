@@ -2,16 +2,21 @@
 
 var candy = function(){
 	this.candy = true;
-	this.report = function(){
-		console.log(this.color);
+	this.sayHi = function(){
+		console.log('hi');
 	}
 }
+
+candy.prototype.report = function(){
+	console.log(this.color);
+};
+
 var Pink = function(type, style){
 	this.color = "pink";
 	this.type = type;
 	this.style = style;
 };
-Pink.protoype = new candy();
+Pink.prototype = new candy();
 var pink = new Pink('normal', 'round');
 
 // var Green = function(type, style)
@@ -21,7 +26,7 @@ var Green = function(type, style){
 	this.type = type;
 	this.style = style;
 };
-Green.protoype = new candy();
+Green.prototype = new candy();
 var green = new Green('normal',  'round');
 
 var Yellow = function(type, style){
@@ -29,14 +34,14 @@ var Yellow = function(type, style){
 	this.type = type;
 	this.style = style;
 };
-Yellow.protoype = new candy();
+Yellow.prototype = new candy();
 var yellow = new Yellow('normal',  'round');
 
 // var candy = function(){
 // 	this.candy = true;
 // }
 
-// candy.protoype.idByColor = function(name){
+// candy.prototype.idByColor = function(name){
 // 	return this.color;
 // }
 
@@ -45,7 +50,7 @@ var Blue = function(type, style){
 	this.type = type;
 	this.style = style;
 };
-Blue.protoype = new candy();
+Blue.prototype = new candy();
 var blue = new Blue('normal',  'round');
 
 // because nievie always needs a randomizer... always. 
@@ -76,13 +81,6 @@ makeRow = function(){
 		}
 	return row;
 }
-
-// didn't want to get stuck down a prototyping rabbit hole, but wanted to leave the constructor function here for future implementation
-
-// var row = function(){
-// 	var r = makeRow();
-// 	return r;
-// }
 
 makeGrid = function(){
 	var grid = []
@@ -120,34 +118,7 @@ convertGridToHtml = function(grid){
 var land = document.getElementsByClassName('land');
 var candyLand = document.createElement('div');
 
-// notes on where to go next:
-// need helper fn with starting spot and a direction, tells you how far you can go 
-// i compared to i of back forward and samsies of i for all rows
 
-finder = function(array){
-	for (var i = 0; i <array.length; i++) {
-		// do a check function
-		// record output
-	};
-}
-
-grid_search = function (grid, starting_point){
-
-}
-
-row_search = function (grid,  starting){
-
-}
-
-//check array again array 
-
-check = function(grid){
-	var grid = grid;
-	for (var i = 0; i <grid.length; i++) {
-	grid[i]
-	};
-	return grid[i];
-}
 
 // take the first array and compare it to the second array to look for a match per index 
 // how do I check to see what is in an index? Array[i] returns what ever is in Array at [i] index. 
@@ -155,9 +126,6 @@ check = function(grid){
 // for Array x if content of Array x [i] = content of Array y [i] console log pair. ( flag a pair? probably 
 // best to have it return me a matrix.... right? 
 
-// for (var i = 0; i < grid.length; i++) {
-// 	if (grid[0][0] === grid[1])
-// };
 
 a = ['blue','pink','yellow','red','blue','blue','blue','red'];
 match_color='';
