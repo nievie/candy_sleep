@@ -2,9 +2,12 @@
 
 var candy = function(){
 	this.candy = true;
+	this.break = function(){};
+	this.score = function(){};
 	this.sayHi = function(){
 		console.log('hi');
-	}
+	};
+
 }
 
 candy.prototype.report = function(){
@@ -60,64 +63,6 @@ candy_random = function(){
 	var candie = candies[Math.floor(Math.random()*candies.length)];
 	return candie;
 }
-
-// test to make sure I know how to hook up the js to the html
-
-placeRandomCandyInHtml = function(){
-	var candy_span = document.createElement('button');
-	var new_candy = candy_random();
-	candy_span.className = new_candy.color;
-	candy_span.style.color = new_candy.color;
-	document.body.appendChild(candy_span);
-}
-
-
-// this is where the grid will be built and populated
-
-makeRow = function(){
-	var row = [];
-		while (row.length < 9){
-			row.push(candy_random());
-		}
-	return row;
-}
-
-makeGrid = function(){
-	var grid = []
-	for (var i = 0; i < 9; i++) {
-		grid.push(makeRow());
-	};
-	return grid;
-}
-
-var starterGrid = makeGrid();
-
-// revision to the above function placeRandomCandyInHtml(), now takes a candy object as it's argument for improved flexibility
-convertCandyToHtml = function(candy){
-	var candy_span = document.createElement('button');
-	var new_candy = candy;
-	candy_span.className = new_candy.color;
-	candy_span.style.color = new_candy.color;
-	document.body.appendChild(candy_span);
-}
-
-//now we can convert the entire starterGrid all at once
-
-convertGridToHtml = function(grid){
-	var foundCandy = {};
-	for (var i = 0; i < grid.length; i++) {
-		for ( var j = 0; j < grid[i].length; j++ ) { 
-			var foundCandy = grid[i][j];
-			convertCandyToHtml(foundCandy);
-    };
-	};
-};
-
-// made some html variables for testing 
-
-var land = document.getElementsByClassName('land');
-var candyLand = document.createElement('div');
-
 
 
 // take the first array and compare it to the second array to look for a match per index 
