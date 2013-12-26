@@ -18,6 +18,7 @@ var Pink = function(type, style){
 	this.color = "pink";
 	this.type = type;
 	this.style = style;
+	this.pink = true;
 };
 Pink.prototype = new candy();
 var pink = new Pink('normal', 'round');
@@ -28,6 +29,7 @@ var Green = function(type, style){
 	this.color = "green";
 	this.type = type;
 	this.style = style;
+	this.green = true;
 };
 Green.prototype = new candy();
 var green = new Green('normal',  'round');
@@ -36,6 +38,7 @@ var Yellow = function(type, style){
 	this.color = "yellow";
 	this.type = type;
 	this.style = style;
+	this.yellow = true;
 };
 Yellow.prototype = new candy();
 var yellow = new Yellow('normal',  'round');
@@ -52,6 +55,7 @@ var Blue = function(type, style){
 	this.color = "blue";
 	this.type = type;
 	this.style = style;
+	this.blue = true;
 };
 Blue.prototype = new candy();
 var blue = new Blue('normal',  'round');
@@ -98,4 +102,6 @@ var search = function(){
 	}
 	
 }
+
+
 
